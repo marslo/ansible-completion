@@ -7,7 +7,7 @@ _ansible-vault() {
 
     case $previous_word in
         create|decrypt|edit|encrypt|encrypt_string|rekey|view)
-            options="--debug --vault-password-file -h --help"
+            options="--debug --vault-id --ask-vault-password --vault-password-file --verbose --output --encrypt-vault-id -J -v -h --help"
             if [[ "$current_word" == -* ]]; then
                 COMPREPLY=( $( compgen -W "$options" -- "$current_word" ) )
             fi
